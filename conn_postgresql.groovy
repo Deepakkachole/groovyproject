@@ -1,8 +1,8 @@
 import groovy.sql.Sql
 
-def dbUrl      = "jdbc:postgresql://localhost/postgresql"
-def dbUser     = "postgresql"
-def dbPassword = "postgresql23"
+def dbUrl      = "jdbc:postgresql://localhost/postgres"
+def dbUser     = "postgres"
+def dbPassword = "postgres"
 def dbDriver   = "org.postgresql.Driver"
 
 def sql = Sql.newInstance(dbUrl, dbUser, dbPassword, dbDriver)
