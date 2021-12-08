@@ -1,5 +1,5 @@
 def gv
-
+def conn
 pipeline {
     agent any
     parameters {
@@ -10,7 +10,8 @@ pipeline {
         stage("init") {
             steps {
                 script {
-                   gv = load "script.groovy" 
+                   gv = load "conn_postgresql.groovy" 
+                   gv = load "script.groovy"
                 }
             }
         }
@@ -18,6 +19,7 @@ pipeline {
             steps {
                 script {
                     gv.buildApp()
+                    conn.sql()
                 }
             }
         }
